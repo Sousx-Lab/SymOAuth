@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-center align-items-center  mt-4">
+     <h4 class="mr-2"> Welcome {% if app.user %} 
+        {{app.user.username}} </h4>
+        <a href="{{ path('app_logout') }}">Logout</a>
+    {% else %}
+       Visitor </h4>
+       <a href="{{ path('app_login') }}">Login</a>
+</div>
+    {% endif %}
+
+{% endblock %}
